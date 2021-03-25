@@ -109,11 +109,10 @@ class PrebuiltComment {
     }
 }
 
-new PrebuiltComment("newDefault", "Hey there, @~~{PRAuthor}!\nI've spun up a server so you can preview the wiki with your changes. It has all the same styling as the real wiki, so your changes here will look the exact same when merged.\n## → [Click Here](~~{LinkDomain}:~~{AssignedPort} \"Click to go to preview site\") ← to go to the preview site.\n(Other contributors and reviewers may use this to make sure your changes are top-notch)\n<br>\nMy resources are limited, so I can only keep the preview open for so long. However, every time I see more changes show up in this thread I'll keep the preview open longer, or reopen it if it timed out already.\nThanks for contributing!")
+//Want more or less comments, add or remove these instantiators
 
-//For when I comment (hardcoded)
-new PrebuiltComment("newModified", "Hey there, @~~{PRAuthor}!\nI've spun up a server so you can preview the wiki with your changes. It has all the same styling as the real wiki, so your changes here will look the exact same when merged.\n## → [Click Here](~~{LinkDomain}:~~{AssignedPort} \"Click to go to preview site\") ← to go to the preview site.\n(Other contributors and reviewers may use this to make sure your changes are top-notch)\n<br>\nMy resources are limited, so I can only keep the preview open for so long. However, every time I see more changes show up in this thread I'll keep the preview open longer, or reopen it if it timed out already.")
+new PrebuiltComment("newDefault", "Hey there, @~~{PRAuthor}!\nI get sent whenever a person creates a PR. You can dynamically include variables from the CommentData interface by typing ~~{keyName}!")
 
-new PrebuiltComment("edit", "I've plugged your latest changes into the preview, so I'll keep it open longer. [Click Here](~~{LinkDomain}:~~{AssignedPort} \"Click to go to preview site\") to go to the preview site")
+new PrebuiltComment("edit", "I get sent whenever a user adds a new commit to an existing PR")
 
-new PrebuiltComment("newNoResources", "Hey there, ~~${PRAuthor}!\nThere's a lot of traffic right now so I wasn't able to create a website preview.\n<br>\nIf you need a preview, you can ask me to try again in a few hours.\nPost a comment with this exact text: `@~~{BotLoginUsername} create`")
+new PrebuiltComment("newNoResources", "I get sent whenever a instances is requested by a configured limit has been exceeded")

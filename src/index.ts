@@ -206,6 +206,7 @@ function isValidAction(allowedActions: Array<string>, incomingAction:string) {
 
 const PR_DELAY_MS = 15000 //This should be set long enough (about 15 seconds or so) so that Github has time to generate a new zip archive for the branch
 
+//If you don't want to use commands at all, you can remove the issue_comment callback register
 const main = new Main(require(process.cwd() + "/config.json"), require(process.cwd() + "/auth.json"))
 .registerBodyTypeCallback("issue_comment", IC_CB.function)
 .registerBodyTypeCallback("pull_request", PR_CB.function, PR_DELAY_MS)

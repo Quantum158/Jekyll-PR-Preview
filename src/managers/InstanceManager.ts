@@ -207,20 +207,10 @@ class PRInstance {
                     try {
                         await _this.downloadDir()
                         if (_this.activateJekyll()) {
-
-                            //Conditional switch because the comment that is sent feels weird when it's replying to me
                             if (!fromCommand) {
-                                switch (_this.webhookData.PRAuthor) {
-                                    case "Quantum158":
-                                        await _this.comment("newModified")
-                                        result = "newModified"
-                                        break;
-    
-                                    default:
-                                        await _this.comment("newDefault")
-                                        result = "newDefault"
-                                        break;
-                                }
+                                await _this.comment("newDefault")
+                                result = "newDefault"
+                                break;
                             }
 
                         } else {
